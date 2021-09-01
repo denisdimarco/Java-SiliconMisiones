@@ -1,5 +1,6 @@
 /*
  Vectores - Ejercicio 2:
+
     Realizar un programa que permita la carga de 10 números en un vector. 
     Una vez cargados, se necesita que el programa determine cual es el mayor y cuál es el menor de ellos.
  */
