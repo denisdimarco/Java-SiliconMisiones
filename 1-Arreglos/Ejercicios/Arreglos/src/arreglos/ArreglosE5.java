@@ -27,7 +27,7 @@ public class ArreglosE5 {
         String nombresCiudades[] = new String[5];
         double tempMinima[] = new double[5];
         double tempMaxima[] = new double[5];
-        
+
         Scanner leer = new Scanner(System.in);
 
         for (int i = 0; i < nombresCiudades.length; i++) {
@@ -39,14 +39,27 @@ public class ArreglosE5 {
             System.out.println("Ingrese temperatura maxima");
             tempMaxima[i] = leer.nextDouble();
         }
-        int indiceCiudadTemperaturaMasBaja;
-        int indiceCiudadTemperaturaMasAlta;
-        
-         for (int i = 0; i < nombresCiudades.length; i++) {
+        int ciudadTempBaja = 0;
+        int ciudadTempAlta = 0;
+        double tempMinimaRegistrada = tempMinima[0];
+        double tempMaximaRegistrada = tempMaxima[0];
 
-           if(tempMinima[i])
+        for (int i = 0; i < nombresCiudades.length; i++) {
+
+            if (tempMinima[i] < tempMinimaRegistrada) {
+                tempMinimaRegistrada = tempMinima[i];
+                ciudadTempBaja = i;
+            }
+
+            if (tempMaxima[i] > tempMaximaRegistrada) {
+                tempMaximaRegistrada = tempMaxima[i];
+                ciudadTempAlta = i;
+            }
         }
-         
+
+        System.out.println("La ciudad con temperatura mas baja fue " + nombresCiudades[ciudadTempBaja]);
+        System.out.println("Con " );
+        System.out.println("La ciudad con temperatura mas alta fue " + nombresCiudades[ciudadTempAlta]);
 
     }
 }
