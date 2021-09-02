@@ -58,8 +58,8 @@ public class ArreglosE5 {
         }
 
         System.out.println("La ciudad con temperatura mas baja fue " + nombresCiudades[ciudadTempBaja]);
-        System.out.println("Con " );
+        System.out.println("Con " + tempMinima[ciudadTempBaja] + " grados" );
         System.out.println("La ciudad con temperatura mas alta fue " + nombresCiudades[ciudadTempAlta]);
-
+        System.out.println("Con " + tempMaxima[ciudadTempAlta] + " grados" );
     }
 }
