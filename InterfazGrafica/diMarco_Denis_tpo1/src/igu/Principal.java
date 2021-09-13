@@ -5,7 +5,8 @@ package igu;
  * @author Denis Di Marco
  */
 public class Principal extends javax.swing.JFrame {
-    //Creo los vectores para cada dato.
+
+//Creo los vectores para cada dato.
     int[] vectorIndex = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     String[] vectorDni = new String[10];
     String[] vectorName = new String[10];
@@ -18,7 +19,9 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
+
         initComponents();
+
     }
 
     /**
@@ -237,7 +240,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         //Funciones del boton Guardar
-      
+
         int indiceTemporal = Integer.parseInt(txtIndex.getText());
         vectorDni[indiceTemporal] = txtDni.getText();
         vectorName[indiceTemporal] = txtName.getText();
@@ -250,18 +253,18 @@ public class Principal extends javax.swing.JFrame {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         //Acciones del boton incrementar indice
-        
+
         int indiceGeneral = Integer.parseInt(txtIndex.getText());
-        
+
         indiceGeneral--;
-        
+
         if (indiceGeneral > -1) {
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         } else if ((indiceGeneral == -1)) {
             indiceGeneral = 9;
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         }
-        
+
         //Recorrer vectores de cada tipo segun el indice general.
         txtDni.setText(vectorDni[indiceGeneral]);
         txtName.setText(vectorName[indiceGeneral]);
@@ -269,22 +272,22 @@ public class Principal extends javax.swing.JFrame {
         txtAddress.setText(vectorAddress[indiceGeneral]);
         txtPhone.setText(vectorPhone[indiceGeneral]);
         txtDate.setText(vectorDate[indiceGeneral]);
-       
+
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void forwardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardBtnActionPerformed
         //Acciones del boton decrementar indice
         int indiceGeneral = Integer.parseInt(txtIndex.getText());
-        
+
         indiceGeneral++;
-        
+
         if (indiceGeneral < 10) {
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         } else if ((indiceGeneral == 10)) {
             indiceGeneral = 0;
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         }
-        
+
         //Recorrer vectores de cada tipo segun el indice general.
         txtDni.setText(vectorDni[indiceGeneral]);
         txtName.setText(vectorName[indiceGeneral]);
@@ -292,7 +295,7 @@ public class Principal extends javax.swing.JFrame {
         txtAddress.setText(vectorAddress[indiceGeneral]);
         txtPhone.setText(vectorPhone[indiceGeneral]);
         txtDate.setText(vectorDate[indiceGeneral]);
-        
+
     }//GEN-LAST:event_forwardBtnActionPerformed
 
 
