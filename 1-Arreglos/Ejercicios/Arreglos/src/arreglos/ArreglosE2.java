@@ -17,29 +17,28 @@ public class ArreglosE2 {
     public static void main(String[] args) {
         int vectorNumeros[] = new int[10];
         int mayor = 0;
-        
+
         Scanner leer = new Scanner(System.in);
-        
+
         //Cargo 10 numeros al vector
         for (int i = 0; i < vectorNumeros.length; i++) {
             System.out.println("Ingrese un entero");
             vectorNumeros[i] = leer.nextInt();
         }
-       
+
         //Inicializo la variable menor con el valor del indice 0 del vector;
         int menor = vectorNumeros[0];
-        
-        
+
         //Recorro el vector para encontrar mayor y menor valor
         for (int i = 0; i < vectorNumeros.length; i++) {
-            if (vectorNumeros[i] > mayor){ 
+            if (vectorNumeros[i] > mayor) {
                 mayor = vectorNumeros[i];
             }
-            if (vectorNumeros[i] < menor){
+            if (vectorNumeros[i] < menor) {
                 menor = vectorNumeros[i];
             }
         }
-        
+
         System.out.println("El mayor numero ingresado fue: " + mayor);
         System.out.println("El menor numero ingresado fue: " + menor);
 
