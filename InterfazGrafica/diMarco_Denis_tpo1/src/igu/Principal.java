@@ -5,7 +5,7 @@ package igu;
  * @author Denis Di Marco
  */
 public class Principal extends javax.swing.JFrame {
-
+    //Creo los vectores para cada dato.
     int[] vectorIndex = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     String[] vectorDni = new String[10];
     String[] vectorName = new String[10];
@@ -56,8 +56,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Agenda Electrónica");
-
-        jSeparator1.setBackground(new java.awt.Color(153, 255, 204));
 
         jLabel2.setText("DNI         :");
 
@@ -122,14 +120,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -162,19 +152,23 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(txtIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(saveBtn)
-                                .addGap(32, 32, 32)
-                                .addComponent(forwardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(saveBtn)
+                        .addGap(32, 32, 32)
+                        .addComponent(forwardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,11 +202,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(saveBtn)
                     .addComponent(backBtn)
                     .addComponent(forwardBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                    .addComponent(txtIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -243,6 +237,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         //Funciones del boton Guardar
+      
         int indiceTemporal = Integer.parseInt(txtIndex.getText());
         vectorDni[indiceTemporal] = txtDni.getText();
         vectorName[indiceTemporal] = txtName.getText();
@@ -254,9 +249,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        //Acciones del boton incrementar indice
         
         int indiceGeneral = Integer.parseInt(txtIndex.getText());
+        
         indiceGeneral--;
+        
         if (indiceGeneral > -1) {
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         } else if ((indiceGeneral == -1)) {
@@ -264,6 +262,7 @@ public class Principal extends javax.swing.JFrame {
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         }
         
+        //Recorrer vectores de cada tipo segun el indice general.
         txtDni.setText(vectorDni[indiceGeneral]);
         txtName.setText(vectorName[indiceGeneral]);
         txtLastName.setText(vectorLastName[indiceGeneral]);
@@ -274,15 +273,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void forwardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardBtnActionPerformed
-
+        //Acciones del boton decrementar indice
         int indiceGeneral = Integer.parseInt(txtIndex.getText());
+        
         indiceGeneral++;
+        
         if (indiceGeneral < 10) {
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         } else if ((indiceGeneral == 10)) {
             indiceGeneral = 0;
             txtIndex.setText(String.valueOf(vectorIndex[indiceGeneral]));
         }
+        
+        //Recorrer vectores de cada tipo segun el indice general.
         txtDni.setText(vectorDni[indiceGeneral]);
         txtName.setText(vectorName[indiceGeneral]);
         txtLastName.setText(vectorLastName[indiceGeneral]);
